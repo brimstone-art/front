@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://br-domain.nomoredomainswork.ru', 'https://br-stone.nomoredomainswork.ru/';
+export const BASE_URL = 'https://br-domain.nomoredomainswork.ru';
 
 export const endpoints = {
   games: `${BASE_URL}/games`,
