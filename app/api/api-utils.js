@@ -15,13 +15,14 @@ export const isResponseOk = (response) => {
     return !(response instanceof Error);
   };
 
-  const normalizeDataObject = (obj) => {
-         return {
-             ...obj,
-             category: obj.categories,
-            users: obj.users_permissions_users,
-         }
-    }
+const normalizeDataObject = (obj) => {
+  let str = JSON.stringify(obj)
+  
+  str = str.replaceAll('_id', 'id');
+  const newObj = JSON.parse(str)
+  const result = { ...newObj, category: newObj.categories }
+  return result;
+}
 
     export const normalizeData = (data) => {
             return data.map((item) => {
